@@ -4,9 +4,10 @@ import 'package:fruit_app/core/constants/app_text_styles.dart';
 import 'package:fruit_app/core/helper/extensions.dart';
 import 'package:fruit_app/core/routing/routes.dart';
 import 'package:fruit_app/core/widgets/custom_text_button.dart';
+import 'package:fruit_app/core/widgets/custom_text_field.dart';
 
-class WelcomeScreenTextWidgat extends StatelessWidget {
-  const WelcomeScreenTextWidgat({super.key});
+class AuthField extends StatelessWidget {
+  const AuthField({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,22 +18,19 @@ class WelcomeScreenTextWidgat extends StatelessWidget {
         children: [
           SizedBox(height: 40),
           Text(
-            AppStrings.getFreshestFruitSaladCombo,
+            AppStrings.whatIsYourFirstName,
             style: AppTextStyles.size20mainTextColorW500,
           ),
           SizedBox(height: 8),
-          Text(
-            AppStrings.weDeleiverAndFreshest,
-            style: AppTextStyles.size16secTextColorW400,
-          ),
+          CustomTextField(),
           Padding(
             padding: EdgeInsets.only(top: context.screenHeight() * .05),
             child: CustomTextButton(
-                text: AppStrings.letContinue,
+                text: AppStrings.startOrdering,
                 onTap: () {
-                  context.pushReplacmentNamed(Routes.authScreen);
+                  context.pushReplacmentNamed(Routes.homeScreen);
                 }),
-          ),
+          )
         ],
       ),
     );
