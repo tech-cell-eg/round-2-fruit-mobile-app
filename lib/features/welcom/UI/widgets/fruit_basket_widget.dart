@@ -4,8 +4,8 @@ import 'package:fruit_app/core/constants/app_images.dart';
 import 'package:fruit_app/core/helper/extensions.dart';
 
 class FruitBasketWidget extends StatelessWidget {
-  const FruitBasketWidget({super.key});
-
+  const FruitBasketWidget({super.key, required this.fruitBasketImage});
+  final String fruitBasketImage;
   @override
   Widget build(BuildContext context) {
     double contianerHeight = context.screenHeight() * 0.60;
@@ -24,7 +24,7 @@ class FruitBasketWidget extends StatelessWidget {
               height: 37,
             ),
           ),
-          Image.asset(AppImages.imagesFruitsBasket1),
+          Image.asset(fruitBasketImage),
           SizedBox(height: 8),
           Image.asset(
             AppImages.imagesShadow1,
