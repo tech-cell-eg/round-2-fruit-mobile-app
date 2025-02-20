@@ -43,11 +43,15 @@ class OrderListFeatureScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                GestureDetector(
+                CustomPrimaryButtonWidget(
+                  context: context,
                   onTap: () {
-                    showDeliveryModal(context);
+                    showPayCard(context);
                   },
-                  child: CustomPrimaryButtonWidget(width: 199, height: 56, text: 'Checkout', onPressed: () {  },),
+                  width: 199,
+                  height: 56,
+                  text: 'Checkout',
+                  
                 ),
               ],
             ),

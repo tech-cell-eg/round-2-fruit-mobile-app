@@ -22,10 +22,11 @@ class CongratesScreen extends StatelessWidget {
             ),
             SizedBox(height: 56),
             CustomPrimaryButtonWidget(
+              context: context,
               width: 133,
               height: 56,
               text: 'Track order',
-              onPressed: () {},
+              onTap: () {},
             ),
             SizedBox(
               height: 48,
@@ -34,7 +35,7 @@ class CongratesScreen extends StatelessWidget {
                 text: 'Continue shopping',
                 onPressed: () {},
                 width: 181,
-                height: 56),
+                height: 56,),
           ],
         ),
       ),

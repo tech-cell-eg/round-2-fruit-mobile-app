@@ -5,16 +5,16 @@ import '../constants/app_colors.dart';
 
 class CustomWhiteButton extends StatelessWidget {
   final String text;
-  final double width;
-  final double height;
+   final double? width;
+   final double? height;
   final VoidCallback onPressed;
 
   const CustomWhiteButton({
     super.key,
     required this.text,
     required this.onPressed,
-    required this.width,
-    required this.height,
+      this.width,
+      this.height,
   });
 
   @override
@@ -28,7 +28,7 @@ class CustomWhiteButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10),
         ),
-        minimumSize: Size(width, height),  
+        minimumSize: Size(width ??0, height ??0),  
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
       ),
       child: Text(
