@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_text_styles.dart';
-import 'Custom_Pay_Button.dart';
+import '../../../core/widgets/Custom_Button_Widget.dart';
+import '../../input_card_details/input_card_details_screen.dart';
 
-void showDeliveryModal(BuildContext context) {
+void showPayCard(context) {
   showModalBottomSheet(
     context: context,
     isScrollControlled: true,
@@ -12,7 +12,8 @@ void showDeliveryModal(BuildContext context) {
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
     builder: (context) {
-      return Stack(clipBehavior: Clip.none, children: [
+      return Stack(
+        clipBehavior: Clip.none, children: [
         Padding(
           padding: EdgeInsets.only(
             left: 16,
@@ -52,20 +53,31 @@ void showDeliveryModal(BuildContext context) {
                 ),
               ),
               const SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CustomPayButton(
-                      text: 'Pay Card',
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }),
-                  CustomPayButton(
-                      text: 'Delivery',
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }),
-                ],
+              Padding(
+                padding: const EdgeInsets.only(bottom: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CustomPrimaryButtonWidget(
+                        context: context,
+                        text: 'Pay Card',
+                        width: 115,
+                        height: 56,
+                        onTap: () {
+                          Navigator.pop(context);
+                          payCardWidget(context);
+                           
+                        }),
+                    CustomPrimaryButtonWidget(
+                        context: context,
+                        text: 'Delivery',
+                        width: 115,
+                        height: 56,
+                        onTap: () {
+                          Navigator.pop(context);
+                        }),
+                  ],
+                ),
               ),
             ],
           ),
@@ -81,6 +93,9 @@ void showDeliveryModal(BuildContext context) {
             child: const Icon(Icons.close, color: Colors.black),
           ),
         ),
+
+
+      
       ]);
     },
   );

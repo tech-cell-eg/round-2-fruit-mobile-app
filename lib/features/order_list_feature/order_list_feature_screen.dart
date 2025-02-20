@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/core/constants/app_colors.dart';
+import 'package:fruit_app/core/widgets/Custom_Button_Widget.dart';
 import '../../core/constants/app_text_styles.dart';
 import 'widgets/custom_bottom_sheet.dart';
 import 'widgets/custom_pp_bar.dart';
@@ -42,26 +43,15 @@ class OrderListFeatureScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                GestureDetector(
+                CustomPrimaryButtonWidget(
+                  context: context,
                   onTap: () {
-                    showDeliveryModal(context);
+                    showPayCard(context);
                   },
-                  child: Container(
-                    width: 199,
-                    height: 56,
-                    decoration: BoxDecoration(
-                      color: AppColors.primaryColor,
-                      borderRadius: BorderRadius.circular(
-                        10,
-                      ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Checkout',
-                        style: AppTextStyles.size16WhiteW500,
-                      ),
-                    ),
-                  ),
+                  width: 199,
+                  height: 56,
+                  text: 'Checkout',
+                  
                 ),
               ],
             ),
