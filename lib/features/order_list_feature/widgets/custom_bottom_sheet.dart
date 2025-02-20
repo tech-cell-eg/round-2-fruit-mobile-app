@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_text_styles.dart';
-import 'Custom_Pay_Button.dart';
+import '../../../core/widgets/Custom_Button_Widget.dart';
+ 
 
 void showDeliveryModal(BuildContext context) {
   showModalBottomSheet(
@@ -55,13 +56,17 @@ void showDeliveryModal(BuildContext context) {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CustomPayButton(
+                  CustomPrimaryButtonWidget(
                       text: 'Pay Card',
+                      width: 115,
+                      height: 56,
                       onPressed: () {
                         Navigator.pop(context);
                       }),
-                  CustomPayButton(
+                  CustomPrimaryButtonWidget(
                       text: 'Delivery',
+                      width: 115,
+                      height: 56,
                       onPressed: () {
                         Navigator.pop(context);
                       }),
