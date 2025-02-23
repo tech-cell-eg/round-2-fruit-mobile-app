@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_app/core/constants/app_colors.dart';
+import 'package:fruit_app/core/helper/extensions.dart';
 import 'package:fruit_app/core/widgets/Custom_Button_Widget.dart';
-import '../../core/constants/app_text_styles.dart';
+import '../../../core/constants/app_text_styles.dart';
 import 'widgets/custom_bottom_sheet.dart';
 import 'widgets/custom_pp_bar.dart';
 import 'widgets/item_widget.dart';
@@ -16,13 +16,14 @@ class OrderListFeatureScreen extends StatelessWidget {
       body: Column(
         children: [
           CustomAppBar(
-            topPositioned: 10,
-            leftPositioned: 50,
+            topPositioned: context.screenHeight() * 0.04,
+            leftPositioned: context.screenWidth() * 0.04,
             bottomPositioned: 0,
-            titletopPositioned: 80,
+            titletopPositioned: context.screenHeight() * 0.09,
             titleleftPositioned: 0,
-            titlerightpositioned: 0
-            ,title: 'My Basket',),
+            titlerightpositioned: 0,
+            title: 'My Basket',
+          ),
           Expanded(
             child: ListView.builder(
               itemCount: 10,
@@ -58,7 +59,6 @@ class OrderListFeatureScreen extends StatelessWidget {
                   width: 199,
                   height: 56,
                   text: 'Checkout',
-                  
                 ),
               ],
             ),

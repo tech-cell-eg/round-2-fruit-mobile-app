@@ -7,7 +7,7 @@ void main() {
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => MyApp(), 
-),
-);
+      builder: (context) => MyApp(),
+    ),
+  );
 }

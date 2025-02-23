@@ -4,6 +4,8 @@ import 'package:fruit_app/core/constants/app_icons.dart';
 import 'package:fruit_app/core/constants/app_images.dart';
 import 'package:fruit_app/core/constants/app_strings.dart';
 import 'package:fruit_app/core/constants/app_text_styles.dart';
+import 'package:fruit_app/core/helper/extensions.dart';
+import 'package:fruit_app/core/routing/routes.dart';
 
 class HomeCustomAppBar extends StatelessWidget {
   const HomeCustomAppBar({super.key});
@@ -15,7 +17,9 @@ class HomeCustomAppBar extends StatelessWidget {
       children: [
         SvgPicture.asset(AppIcons.iconsGroup),
         GestureDetector(
-          onTap: (){},
+          onTap: () {
+            context.pushNamed(Routes.myBasketScreen);
+          },
           child: Column(
             children: [
               Image.asset(

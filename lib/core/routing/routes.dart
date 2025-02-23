@@ -1,8 +1,11 @@
 class Routes {
   Routes._();
+  static const String welcomScreen = 'welcomscreen';
+  static const String authScreen = 'authscreen';
+  static const String homeScreen = 'homescreen';
+  static const String productDetailsScreen = 'productdetailsscreen';
+  static const String myBasketScreen = 'mybasketscreen';
+  static const String congratsScreen = 'congratsscreen';
+   static const String trackOrderScreen = 'trackorderscreen';
 
-  static const String welcomScreen = 'welcom screen';
-  static const String authScreen = 'auth screen';
-  static const String homeScreen = 'home screen';
-  static const String productDetailsScreen = 'product details screen';
 }

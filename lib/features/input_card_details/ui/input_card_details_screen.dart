@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fruit_app/core/constants/app_text_styles.dart';
-import 'package:fruit_app/core/widgets/Custom_white_Button.dart';
-
-import '../../core/constants/app_colors.dart';
+import 'package:fruit_app/core/helper/extensions.dart';
+import 'package:fruit_app/core/routing/routes.dart';
+import '../../../core/constants/app_colors.dart';
 import 'Date_And_Ccv_Widget.dart';
 
 Future<dynamic> payCardWidget(BuildContext context) {
@@ -28,9 +27,22 @@ Future<dynamic> payCardWidget(BuildContext context) {
                 // mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Card Holder\'s Name',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  Row(
+                    children: [
+                      const Text(
+                        'Card Holder\'s Name',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.w500),
+                      ),
+                      SizedBox(width: context.screenWidth() * 0.3),
+                      FloatingActionButton(
+                        mini: true,
+                        backgroundColor: AppColors.whiteColor,
+                        elevation: 5,
+                        onPressed: () => Navigator.pop(context),
+                        child: const Icon(Icons.close, color: Colors.black),
+                      ),
+                    ],
                   ),
                   const SizedBox(height: 16),
                   TextField(
@@ -84,7 +96,9 @@ Future<dynamic> payCardWidget(BuildContext context) {
                           style: TextButton.styleFrom(
                             backgroundColor: AppColors.whiteColor,
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            context.pushReplacmentNamed(Routes.congratsScreen);
+                          },
                           child: Text(
                             'Complete Order',
                           ),
@@ -96,17 +110,11 @@ Future<dynamic> payCardWidget(BuildContext context) {
               ),
             ),
           ),
-          Positioned(
-            top: -50,
-            left: 150,
-            child: FloatingActionButton(
-              mini: true,
-              backgroundColor: AppColors.whiteColor,
-              elevation: 5,
-              onPressed: () => Navigator.pop(context),
-              child: const Icon(Icons.close, color: Colors.black),
-            ),
-          ),
+          // Positioned(
+          //   bottom: context.screenHeight() * 0.5,
+          // left: context.screenWidth() * 0.45,
+          //   child:
+          // ),
         ],
       );
     },

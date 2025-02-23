@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_text_styles.dart';
-import '../../../core/widgets/Custom_Button_Widget.dart';
-import '../../input_card_details/input_card_details_screen.dart';
+import 'package:fruit_app/core/helper/extensions.dart';
+import 'package:fruit_app/core/routing/routes.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_text_styles.dart';
+import '../../../../core/widgets/Custom_Button_Widget.dart';
+import '../../../input_card_details/ui/input_card_details_screen.dart';
 
 void showPayCard(context) {
   showModalBottomSheet(
@@ -12,8 +14,7 @@ void showPayCard(context) {
       borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
     ),
     builder: (context) {
-      return Stack(
-        clipBehavior: Clip.none, children: [
+      return Stack(clipBehavior: Clip.none, children: [
         Padding(
           padding: EdgeInsets.only(
             left: 16,
@@ -25,9 +26,21 @@ void showPayCard(context) {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Delivery address',
-                style: AppTextStyles.size20mainTextColorW500,
+              Row(
+                children: [
+                  const Text(
+                    'Delivery address',
+                    style: AppTextStyles.size20mainTextColorW500,
+                  ),
+                  SizedBox(width: context.screenWidth() * 0.4),
+                  FloatingActionButton(
+                    mini: true,
+                    backgroundColor: AppColors.whiteColor,
+                    elevation: 5,
+                    onPressed: () => Navigator.pop(context),
+                    child: const Icon(Icons.close, color: Colors.black),
+                  ),
+                ],
               ),
               const SizedBox(height: 16),
               TextField(
@@ -66,7 +79,6 @@ void showPayCard(context) {
                         onTap: () {
                           Navigator.pop(context);
                           payCardWidget(context);
-                           
                         }),
                     CustomPrimaryButtonWidget(
                         context: context,
@@ -74,7 +86,7 @@ void showPayCard(context) {
                         width: 115,
                         height: 56,
                         onTap: () {
-                          Navigator.pop(context);
+                          context.pushReplacmentNamed(Routes.congratsScreen);
                         }),
                   ],
                 ),
@@ -82,20 +94,11 @@ void showPayCard(context) {
             ],
           ),
         ),
-        Positioned(
-          top: -50,
-          left: 150,
-          child: FloatingActionButton(
-            mini: true,
-            backgroundColor: AppColors.whiteColor,
-            elevation: 5,
-            onPressed: () => Navigator.pop(context),
-            child: const Icon(Icons.close, color: Colors.black),
-          ),
-        ),
-
-
-      
+        // Positioned(
+        //   bottom: context.screenHeight() * 0.37,
+        //   left: context.screenWidth() * 0.45,
+        //   child:
+        // ),
       ]);
     },
   );

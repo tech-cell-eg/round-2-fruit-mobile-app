@@ -1,26 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:fruit_app/core/helper/extensions.dart';
 
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_text_styles.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_text_styles.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String title;
   final double leftPositioned;
   final double topPositioned;
   final double bottomPositioned;
- 
 
- final double titleleftPositioned;
+  final double titleleftPositioned;
   final double titletopPositioned;
   final double titlerightpositioned;
   const CustomAppBar({
-    super.key, required this.title, required this.leftPositioned, required this.topPositioned, required this.bottomPositioned, required this.titleleftPositioned, required this.titletopPositioned, required this.titlerightpositioned,
+    super.key,
+    required this.title,
+    required this.leftPositioned,
+    required this.topPositioned,
+    required this.bottomPositioned,
+    required this.titleleftPositioned,
+    required this.titletopPositioned,
+    required this.titlerightpositioned,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 150,
+      height: context.screenHeight() * 0.18,
       width: double.infinity,
       color: AppColors.primaryColor,
       child: Stack(
@@ -35,7 +42,9 @@ class CustomAppBar extends StatelessWidget {
                   backgroundColor:
                       WidgetStateProperty.all(AppColors.whiteColor),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  context.pop();
+                },
                 label: const Text(
                   'Go back',
                   style: AppTextStyles.size16mainTextColorW400,

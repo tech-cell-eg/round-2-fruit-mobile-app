@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/constants/app_colors.dart';
-import '../../../core/constants/app_text_styles.dart';
+import 'package:fruit_app/core/helper/extensions.dart';
+import '../../../../core/constants/app_colors.dart';
+import '../../../../core/constants/app_text_styles.dart';
 
 class ItemWidget extends StatelessWidget {
   const ItemWidget({
@@ -12,9 +13,9 @@ class ItemWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 25),
       child: Container(
-        width: 375,
+        width: context.screenWidth(),
         height: 80,
-        color: AppColors.whiteColor,
+        // color: AppColors.whiteColor,
         child: ListTile(
           leading: Container(
             width: 65,
