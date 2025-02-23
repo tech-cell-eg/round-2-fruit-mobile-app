@@ -3,6 +3,7 @@ import 'package:fruit_app/core/constants/app_strings.dart';
 import 'package:fruit_app/core/routing/app_router.dart';
 import 'package:fruit_app/core/routing/routes.dart';
  
+ 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(fontFamily: AppStrings.appFont),
       onGenerateRoute:AppRouter().generateRoute,
       initialRoute: Routes.welcomScreen,
+ 
     );
   }
 }
