@@ -2,6 +2,10 @@
 class AppImages {
   AppImages._();
   
+  static const String imagesFoodBasket = "assets/images/food_basket.png";
+
+  static const String imagesFoodBasketHome = "assets/images/food_basket_home.png";
+
   static const String imagesFruitBasket2 = "assets/images/fruit_basket_2.png";
 
   static const String imagesFruitDrop1 = "assets/images/fruit_drop_1.png";
@@ -11,6 +15,8 @@ class AppImages {
   static const String imagesMap = "assets/images/map.png";
  
   static const String congratesimage = "assets/images/congrates.png";
+
+  static const String imagesRecommendedCombo = "assets/images/recommended_combo.png";
 
   static const String imagesShadow1 = "assets/images/shadow1.png";
 

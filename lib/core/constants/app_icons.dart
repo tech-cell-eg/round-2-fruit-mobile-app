@@ -12,9 +12,17 @@ class AppIcons {
 
   static const String iconsHoneyPeachFruit = "assets/icons/honey_peach_fruit.svg";
 
+  static const String iconsLargePlus = "assets/icons/large_plus.svg";
+
   static const String iconsMinus = "assets/icons/minus.svg";
 
+  static const String iconsMinusCircle = "assets/icons/minus_circle.svg";
+
+  static const String iconsMyBasket = "assets/icons/my_basket.svg";
+
   static const String iconsPlus = "assets/icons/plus.svg";
+
+  static const String iconsPlusCircle = "assets/icons/plus_circle.svg";
 
   static const String iconsPound = "assets/icons/pound.svg";
 
