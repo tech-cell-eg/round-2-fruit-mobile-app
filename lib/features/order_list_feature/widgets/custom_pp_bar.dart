@@ -4,8 +4,17 @@ import '../../../core/constants/app_colors.dart';
 import '../../../core/constants/app_text_styles.dart';
 
 class CustomAppBar extends StatelessWidget {
+  final String title;
+  final double leftPositioned;
+  final double topPositioned;
+  final double bottomPositioned;
+ 
+
+ final double titleleftPositioned;
+  final double titletopPositioned;
+  final double titlerightpositioned;
   const CustomAppBar({
-    super.key,
+    super.key, required this.title, required this.leftPositioned, required this.topPositioned, required this.bottomPositioned, required this.titleleftPositioned, required this.titletopPositioned, required this.titlerightpositioned,
   });
 
   @override
@@ -17,9 +26,9 @@ class CustomAppBar extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            left: 10,
-            top: 50,
-            bottom: 0,
+            left: leftPositioned,
+            top: topPositioned,
+            bottom: bottomPositioned,
             child: Center(
               child: TextButton.icon(
                 style: ButtonStyle(
@@ -39,12 +48,12 @@ class CustomAppBar extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 80,
-            left: 0,
-            right: 0,
+            top: titletopPositioned,
+            left: titleleftPositioned,
+            right: titlerightpositioned,
             child: Center(
               child: Text(
-                'My Basket',
+                title,
                 style: AppTextStyles.size24WhiteW500,
               ),
             ),

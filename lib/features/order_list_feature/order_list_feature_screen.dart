@@ -15,7 +15,14 @@ class OrderListFeatureScreen extends StatelessWidget {
       //appBar: CustomAppBar(),
       body: Column(
         children: [
-          CustomAppBar(),
+          CustomAppBar(
+            topPositioned: 10,
+            leftPositioned: 50,
+            bottomPositioned: 0,
+            titletopPositioned: 80,
+            titleleftPositioned: 0,
+            titlerightpositioned: 0
+            ,title: 'My Basket',),
           Expanded(
             child: ListView.builder(
               itemCount: 10,
