@@ -17,7 +17,7 @@ class DateAndCcvWidget extends StatelessWidget {
        crossAxisAlignment: CrossAxisAlignment.start,
       children: [
             Text(text,style: AppTextStyles.size20mainTextColorW500,),
-             Container(
+             SizedBox(
               width: 134,
               height: 50,
                child: TextFormField(
