@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:fruit_app/core/helper/extensions.dart';
+import 'package:fruit_app/features/order_list_feature/meal_model.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_text_styles.dart';
 
 class ItemWidget extends StatelessWidget {
+ final MealModel mealModel;
   const ItemWidget({
-    super.key,
+    super.key, required this.mealModel,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 25),
-      child: Container(
+      child: SizedBox(
         width: context.screenWidth(),
         height: 80,
         // color: AppColors.whiteColor,

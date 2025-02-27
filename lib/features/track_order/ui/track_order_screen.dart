@@ -54,7 +54,7 @@ class OrderDeliveredWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 375,
       height: 80,
       // color: AppColors.whiteColor,
